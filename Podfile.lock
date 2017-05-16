@@ -1,0 +1,29 @@
+PODS:
+  - FaveButton (2.0.3)
+  - IGListKit (3.0.0):
+    - IGListKit/Default (= 3.0.0)
+  - IGListKit/Default (3.0.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.0.0)
+
+DEPENDENCIES:
+  - FaveButton (~> 2.0.0)
+  - IGListKit (from `https://github.com/Instagram/IGListKit.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  IGListKit:
+    :branch: master
+    :git: https://github.com/Instagram/IGListKit.git
+
+CHECKOUT OPTIONS:
+  IGListKit:
+    :commit: aacb369c10efd19342fda1fb5a54f204c4960ddd
+    :git: https://github.com/Instagram/IGListKit.git
+
+SPEC CHECKSUMS:
+  FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
+  IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
+
+PODFILE CHECKSUM: 948306c3fd1986914e55915af121ad89294950f7
+
+COCOAPODS: 1.2.0
