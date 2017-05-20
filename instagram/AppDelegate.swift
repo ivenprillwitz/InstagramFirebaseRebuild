@@ -16,11 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        //Get Window
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.black
-        let nav = UINavigationController()
-        nav.pushViewController(TabBarController(), animated: false)
-        window?.rootViewController = nav
+        
+        //Create NavigationController & TabbarController
+        let navigationController = UINavigationController()
+        navigationController.pushViewController(TabBarController(), animated: false)
+        
+        //Set RootViewController and make visible
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }
