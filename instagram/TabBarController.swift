@@ -28,9 +28,9 @@ class TabBarController: UITabBarController {
         
         //Create Controllers
         
-        let homeViewController = HomeViewController()
-        let homeTabBarItem = UITabBarItem(title: "", image: UIImage(named: "home"), selectedImage: UIImage(named: "home"))
-        homeViewController.tabBarItem = homeTabBarItem
+        let feedViewController = FeedViewController()
+        let feedTabBarItem = UITabBarItem(title: "", image: UIImage(named: "home"), selectedImage: UIImage(named: "home"))
+        feedViewController.tabBarItem = feedTabBarItem
         
         
         let searchViewController = SearchViewController()
@@ -52,7 +52,7 @@ class TabBarController: UITabBarController {
         profileViewController.tabBarItem = profileTabBarItem
         
         
-        viewControllers = [homeViewController, searchViewController, photoViewController, activityViewController, profileViewController]
+        viewControllers = [feedViewController, searchViewController, photoViewController, activityViewController, profileViewController]
     }
 
 }
