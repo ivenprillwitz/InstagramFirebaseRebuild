@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BD10FFADB94BA4713B2276E /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2142007FFDD3A77D643C4BFD /* Pods_instagram.framework */; };
+		3C5ECCD81ED0872C0035F5EA /* CommandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5ECCD71ED0872C0035F5EA /* CommandCollectionViewCell.swift */; };
 		3C7F09261ED05EE30030F3DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7F09251ED05EE30030F3DE /* User.swift */; };
 		3C7F09281ED05EEF0030F3DE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7F09271ED05EEF0030F3DE /* Post.swift */; };
 		3C7F092B1ED0668E0030F3DE /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7F092A1ED0668E0030F3DE /* FeedCollectionViewCell.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		2142007FFDD3A77D643C4BFD /* Pods_instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C5ECCD71ED0872C0035F5EA /* CommandCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C7F09251ED05EE30030F3DE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3C7F09271ED05EEF0030F3DE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3C7F092A1ED0668E0030F3DE /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				3C7F092A1ED0668E0030F3DE /* FeedCollectionViewCell.swift */,
+				3C5ECCD71ED0872C0035F5EA /* CommandCollectionViewCell.swift */,
 			);
 			name = "Custom Controlls";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				3C7F09261ED05EE30030F3DE /* User.swift in Sources */,
 				3CAF2F541E0AF06A00F05597 /* ProfileViewController.swift in Sources */,
 				3C7F09281ED05EEF0030F3DE /* Post.swift in Sources */,
+				3C5ECCD81ED0872C0035F5EA /* CommandCollectionViewCell.swift in Sources */,
 				3CAF2F4C1E0AEFF500F05597 /* FeedViewController.swift in Sources */,
 				3CAF2F501E0AF04B00F05597 /* PhotoViewController.swift in Sources */,
 				3C7F092D1ED06E920030F3DE /* PostSectionController.swift in Sources */,
