@@ -39,10 +39,10 @@ class FeedCollectionViewCell: UICollectionViewCell {
         
         self.addSubview(postImageView)
         
-        postImageView.topAnchor.constraint(equalTo: seperatorView.bottomAnchor, constant: 1).isActive = true
+        postImageView.topAnchor.constraint(equalTo: seperatorView.bottomAnchor).isActive = true
         postImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         postImageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        postImageView.heightAnchor.constraint(equalToConstant: self.frame.height - 100).isActive = true
+        postImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
     }
     
@@ -89,8 +89,6 @@ class FeedCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
         imageView.layer.cornerRadius = 22
-//        imageView.layer.borderWidth = 1
-//        imageView.layer.borderColor = UIColor.black.cgColor
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
