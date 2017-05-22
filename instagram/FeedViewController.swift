@@ -14,7 +14,7 @@ class FeedViewController: UIViewController {
     var feedArray = [Post]()
     
     lazy var adapter : ListAdapter = {
-        let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 1)
+        let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
         return adapter
     }()
     
@@ -29,8 +29,8 @@ class FeedViewController: UIViewController {
     
         FirebaseManager.GetImages { (postArray) in
             if let posts = postArray {
-                self.feedArray = posts
                 
+                self.feedArray = posts
                 self.adapter.performUpdates(animated: true)
             }
         }

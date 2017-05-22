@@ -9,24 +9,41 @@
 import Foundation
 import UIKit
 
+let imageCache = NSCache<AnyObject, AnyObject>()
+
 extension UIImageView {
     
     func setImage(from url: URL, withPlaceholder placeholder: UIImage? = nil) {
         
-        self.image = placeholder
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        URLSession.shared.dataTask(with: url) { data,_,_ in
+        if let cachedImage = imageCache.object(forKey: url as AnyObject) as? UIImage {
             
-            if let data = data {
+            DispatchQueue.main.async {
                 
-                let image = UIImage(data: data)
-                
-                DispatchQueue.main.async {
-                    
-                    self.image = image
-                    
-                }
+                self.image = cachedImage
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
-        }.resume()
+            
+        } else {
+            
+            self.image = placeholder
+            
+            URLSession.shared.dataTask(with: url) { data,_,_ in
+                
+                if let data = data {
+                    
+                    if let image = UIImage(data: data) {
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.image = image
+                            imageCache.setObject(image, forKey: url as AnyObject)
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        }
+                    }
+                }
+            }.resume()
+        }
     }
 }

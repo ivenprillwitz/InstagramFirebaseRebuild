@@ -12,9 +12,7 @@ import IGListKit
 class PostSectionController: ListSectionController {
     
     var post: Post!
-    let identifier = "FeedCellIdentifier"
     
-
     override func numberOfItems() -> Int {
         return 6
     }

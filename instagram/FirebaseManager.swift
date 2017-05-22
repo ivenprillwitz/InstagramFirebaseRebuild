@@ -15,6 +15,8 @@ class FirebaseManager {
     
     public static func GetImages(completion: @escaping ([Post]?) -> ()){
         
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         var postArray = [Post]()
         
         firebaseReference.child("posts").observeSingleEvent(of: .value, with: { (data) in
@@ -46,6 +48,7 @@ class FirebaseManager {
                     }
                 }
                 
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 completion(postArray)
             }
         }, withCancel: { (error) in
