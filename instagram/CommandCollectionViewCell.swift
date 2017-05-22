@@ -23,39 +23,41 @@ class CommandCollectionViewCell: UICollectionViewCell {
     
     fileprivate func setupView(){
         
-        let buttonSize: CGFloat = 40
-        let buttonMargin: CGFloat = 6
-        
         self.addSubview(heartButton)
         
-        heartButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
-        heartButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: buttonMargin).isActive = true
+        heartButton.topAnchor.constraint(equalTo: self.topAnchor, constant: topMargin).isActive = true
+        heartButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 6).isActive = true
         heartButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         heartButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
         
         
         self.addSubview(commentButton)
         
-        commentButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        commentButton.topAnchor.constraint(equalTo: self.topAnchor, constant: topMargin).isActive = true
         commentButton.leftAnchor.constraint(equalTo: heartButton.rightAnchor, constant: buttonMargin).isActive = true
         commentButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         commentButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
         
         self.addSubview(shareButton)
         
-        shareButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        shareButton.topAnchor.constraint(equalTo: self.topAnchor, constant: topMargin).isActive = true
         shareButton.leftAnchor.constraint(equalTo: commentButton.rightAnchor, constant: buttonMargin).isActive = true
         shareButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         shareButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
         
         self.addSubview(bookmarkButton)
         
-        bookmarkButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        bookmarkButton.topAnchor.constraint(equalTo: self.topAnchor, constant: topMargin).isActive = true
         bookmarkButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8).isActive = true
         bookmarkButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         bookmarkButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
         
     }
+    
+    
+    let buttonSize: CGFloat = 40
+    let buttonMargin: CGFloat = 5
+    let topMargin: CGFloat = 6
     
     
     let heartButton : UIButton = {

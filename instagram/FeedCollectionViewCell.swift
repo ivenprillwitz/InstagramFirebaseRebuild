@@ -12,7 +12,20 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     var post: Post? {
         didSet{
-            print("It works")
+            if let post = post {
+                
+                guard let profileImageUrl = URL(string: post.profileImageUrl),
+                    let postImageUrl = URL(string: post.postImageUrl) else {
+                        return 
+                }
+                
+                let placeholderImage = UIImage(named: "placeholder")
+                
+                usernameLabel.text = post.username
+                profileImageview.setImage(from: profileImageUrl, withPlaceholder: placeholderImage)
+                postImageView.setImage(from: postImageUrl, withPlaceholder: placeholderImage)
+                
+            }
         }
     }
 
@@ -31,7 +44,19 @@ class FeedCollectionViewCell: UICollectionViewCell {
         setupUsernameLabel()
         setupSeperatorView()
         setupPostImageview()
+        setupMoreButton()
     
+    }
+    
+    fileprivate func setupMoreButton(){
+        
+        self.addSubview(moreButton)
+        
+        moreButton.centerYAnchor.constraint(equalTo: profileImageview.centerYAnchor).isActive = true
+        moreButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -4).isActive = true
+        moreButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        moreButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
     }
     
     
@@ -50,7 +75,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         
         self.addSubview(seperatorView)
         
-        seperatorView.topAnchor.constraint(equalTo : profileImageview.bottomAnchor , constant: 12).isActive = true
+        seperatorView.topAnchor.constraint(equalTo : profileImageview.bottomAnchor , constant: 8).isActive = true
         seperatorView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         seperatorView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         seperatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
@@ -73,10 +98,18 @@ class FeedCollectionViewCell: UICollectionViewCell {
         self.addSubview(profileImageview)
         
         profileImageview.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
-        profileImageview.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 4).isActive = true
-        profileImageview.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        profileImageview.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        profileImageview.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+        profileImageview.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        profileImageview.heightAnchor.constraint(equalToConstant: 32).isActive = true
     }
+    
+    let moreButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "more"), for: .normal)
+        button.tintColor = .black
+        return button
+    }()
 
     let seperatorView : UIView = {
         let view = UIView()
@@ -88,7 +121,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     let profileImageview: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
-        imageView.layer.cornerRadius = 22
+        imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -97,8 +130,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "username"
+        label.text = "leavecaricealone"
         label.textColor = .black
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

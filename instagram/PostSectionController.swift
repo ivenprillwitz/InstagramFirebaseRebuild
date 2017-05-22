@@ -16,7 +16,7 @@ class PostSectionController: ListSectionController {
     
 
     override func numberOfItems() -> Int {
-        return 2
+        return 6
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
@@ -25,7 +25,15 @@ class PostSectionController: ListSectionController {
         case 0:
             return CGSize(width: collectionContext!.containerSize.width, height: 500)
         case 1:
-            return CGSize(width: collectionContext!.containerSize.width, height: 100)
+            return CGSize(width: collectionContext!.containerSize.width, height: 44)
+        case 2:
+            return CGSize(width: collectionContext!.containerSize.width, height: 20)
+        case 3:
+            return CGSize(width: collectionContext!.containerSize.width, height: 20)
+        case 4:
+            return CGSize(width: collectionContext!.containerSize.width, height: 20)
+        case 5:
+            return CGSize(width: collectionContext!.containerSize.width, height: 20)
         default:
             return CGSize(width: collectionContext!.containerSize.width, height: 500)
         }
@@ -35,19 +43,42 @@ class PostSectionController: ListSectionController {
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         
-        if index == 0 {
+        
+        switch index {
+        case 0:
             guard let cell = collectionContext?.dequeueReusableCell(of: FeedCollectionViewCell.self, for: self, at: index) as? FeedCollectionViewCell else {
                 fatalError()
             }
+            cell.post = post
             return cell
-        }
-        if index == 1 {
+        case 1:
             guard let cell = collectionContext?.dequeueReusableCell(of: CommandCollectionViewCell.self, for: self, at: index) as? CommandCollectionViewCell else {
                 fatalError()
             }
             return cell
+        case 2:
+            guard let cell = collectionContext?.dequeueReusableCell(of: LikeCollectionViewCell.self, for: self, at: index) as? LikeCollectionViewCell else {
+                fatalError()
+            }
+            return cell
+        case 3:
+            guard let cell = collectionContext?.dequeueReusableCell(of: DescriptionCollectionViewCell.self, for: self, at: index) as? DescriptionCollectionViewCell else {
+                fatalError()
+            }
+            return cell
+        case 4:
+            guard let cell = collectionContext?.dequeueReusableCell(of: CommentCollectionViewCell.self, for: self, at: index) as? CommentCollectionViewCell else {
+                fatalError()
+            }
+            return cell
+        case 5:
+            guard let cell = collectionContext?.dequeueReusableCell(of: TimestampCollectionViewCell.self, for: self, at: index) as? TimestampCollectionViewCell else {
+                fatalError()
+            }
+            return cell
+        default:
+            return UICollectionViewCell()
         }
-        return UICollectionViewCell()
     }
     
     override func didUpdate(to object: Any) {

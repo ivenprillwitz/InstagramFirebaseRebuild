@@ -14,30 +14,31 @@ class FeedViewController: UIViewController {
     var feedArray = [Post]()
     
     lazy var adapter : ListAdapter = {
-        let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
+        let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 1)
         return adapter
     }()
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let post = Post(postID: "1", profileImageUrl: "url", username: "iven", postImageUrl: "url", timestamp: 123457)
-        feedArray.append(post)
-        feedArray.append(post)
-        feedArray.append(post)
-        
-        
         setupCollectionview()
-        
+        LoadFeed()
+    }
+    
+    fileprivate func LoadFeed(){
+    
+        FirebaseManager.GetImages { (postArray) in
+            if let posts = postArray {
+                self.feedArray = posts
+                
+                self.adapter.performUpdates(animated: true)
+            }
+        }
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-      //  adapter.performUpdates(animated: true, completion: nil)
     }
     
     fileprivate func setupCollectionview(){
@@ -52,7 +53,7 @@ class FeedViewController: UIViewController {
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
     
