@@ -43,7 +43,6 @@ class FeedViewController: UIViewController {
     
     fileprivate func setupCollectionview(){
     
-        
         adapter.collectionView = collectionView
         adapter.dataSource = self
         
