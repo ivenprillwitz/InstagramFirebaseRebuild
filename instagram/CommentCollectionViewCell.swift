@@ -9,21 +9,16 @@
 import UIKit
 
 class CommentCollectionViewCell: UICollectionViewCell {
- 
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupView()
     }
-    required init(coder aDecoder:NSCoder) {
+    required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemnted")
     }
-    
-    fileprivate func setupView(){
-        
+    fileprivate func setupView() {
         self.addSubview(commentLabel)
-        
         commentLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         commentLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
         commentLabel.widthAnchor.constraint(equalToConstant: commentLabel.intrinsicContentSize.width).isActive = true

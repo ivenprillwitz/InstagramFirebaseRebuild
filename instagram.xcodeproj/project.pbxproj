@@ -222,7 +222,6 @@
 				3CF6269D1E0AEA1B0014F6CC /* Resources */,
 				2D48FA7533BED0CFDA386DCA /* [CP] Embed Pods Frameworks */,
 				669051C2F323D7B1FFB3EE3F /* [CP] Copy Pods Resources */,
-				3C764D561EDC780C003A9DD8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,19 +299,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-instagram/Pods-instagram-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		3C764D561EDC780C003A9DD8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		669051C2F323D7B1FFB3EE3F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

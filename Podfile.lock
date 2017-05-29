@@ -46,7 +46,6 @@ PODS:
   - IGListKit/Default (3.0.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.0.0)
-  - SwiftLint (0.18.1)
 
 DEPENDENCIES:
   - Firebase
@@ -54,7 +53,6 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - IGListKit (from `https://github.com/Instagram/IGListKit.git`, branch `master`)
-  - SwiftLint
 
 EXTERNAL SOURCES:
   IGListKit:
@@ -77,8 +75,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
-  SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
 
-PODFILE CHECKSUM: 09b3b37950fca8936984f46bfdf9b7fd05e9ae29
+PODFILE CHECKSUM: dc609dd91588775c608f00bafad649ff510d2ab9
 
 COCOAPODS: 1.2.0
