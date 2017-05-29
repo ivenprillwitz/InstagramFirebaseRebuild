@@ -22,12 +22,12 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionview()
-        LoadFeed()
+        loadFeed()
     }
     
-    fileprivate func LoadFeed(){
+    fileprivate func loadFeed(){
     
-        FirebaseManager.GetImages { (postArray) in
+        FirebaseManager.getImages { (postArray) in
             if let posts = postArray {
                 
                 self.feedArray = posts

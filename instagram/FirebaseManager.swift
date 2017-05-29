@@ -13,7 +13,7 @@ class FirebaseManager {
 
     static let firebaseReference = FIRDatabase.database().reference()
     
-    public static func GetImages(completion: @escaping ([Post]?) -> ()){
+    public static func getImages(completion: @escaping ([Post]?) -> ()){
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         

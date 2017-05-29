@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FaveButton
 
 class CommandCollectionViewCell: UICollectionViewCell {
     
@@ -30,7 +29,6 @@ class CommandCollectionViewCell: UICollectionViewCell {
         heartButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         heartButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
         
-        
         self.addSubview(commentButton)
         
         commentButton.topAnchor.constraint(equalTo: self.topAnchor, constant: topMargin).isActive = true
@@ -51,9 +49,7 @@ class CommandCollectionViewCell: UICollectionViewCell {
         bookmarkButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8).isActive = true
         bookmarkButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         bookmarkButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
-        
     }
-    
     
     let buttonSize: CGFloat = 40
     let buttonMargin: CGFloat = 5
@@ -71,7 +67,7 @@ class CommandCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    let commentButton : UIButton = {
+    let commentButton:UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named:"comment"), for: .normal)

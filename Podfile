@@ -7,9 +7,10 @@ target 'instagram' do
 
   # Pods for instagram
 pod 'IGListKit', :git => 'https://github.com/Instagram/IGListKit.git', :branch => 'master'
-pod 'FaveButton', '~> 2.0.0'
 pod 'Firebase'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Firebase/Auth'
+pod 'SwiftLint'
+
 end

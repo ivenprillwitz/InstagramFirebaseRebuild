@@ -1,5 +1,4 @@
 PODS:
-  - FaveButton (2.0.3)
   - Firebase (3.17.0):
     - Firebase/Core (= 3.17.0)
   - Firebase/Auth (3.17.0):
@@ -47,14 +46,15 @@ PODS:
   - IGListKit/Default (3.0.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.0.0)
+  - SwiftLint (0.18.1)
 
 DEPENDENCIES:
-  - FaveButton (~> 2.0.0)
   - Firebase
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
   - IGListKit (from `https://github.com/Instagram/IGListKit.git`, branch `master`)
+  - SwiftLint
 
 EXTERNAL SOURCES:
   IGListKit:
@@ -67,7 +67,6 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Instagram/IGListKit.git
 
 SPEC CHECKSUMS:
-  FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
   Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -78,7 +77,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
+  SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
 
-PODFILE CHECKSUM: 195cdcb74d3f263fd4d12eefb8d276feffbb2885
+PODFILE CHECKSUM: 09b3b37950fca8936984f46bfdf9b7fd05e9ae29
 
 COCOAPODS: 1.2.0
