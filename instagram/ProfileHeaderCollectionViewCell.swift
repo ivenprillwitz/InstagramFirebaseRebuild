@@ -27,6 +27,7 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
     fileprivate func setupView(){
         setupImageView()
         setupProfileEditButton()
+        setupPostButton()
     }
     
     fileprivate func setupPostButton(){
@@ -34,7 +35,16 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
         self.addSubview(postButton)
         self.addSubview(postLabel)
         
-        postButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20)
+        postLabel.bottomAnchor.constraint(equalTo: profileEditButton.topAnchor, constant: -2).isActive = true
+        postLabel.leftAnchor.constraint(equalTo: profileEditButton.leftAnchor, constant: 16).isActive = true
+        postLabel.widthAnchor.constraint(equalTo: postLabel.widthAnchor).isActive = true
+        postLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        
+        postButton.bottomAnchor.constraint(equalTo: postLabel.topAnchor, constant: 0).isActive = true
+        postButton.leftAnchor.constraint(equalTo: postLabel.leftAnchor, constant: 0).isActive = true
+        postButton.widthAnchor.constraint(equalTo: postButton.widthAnchor).isActive = true
+        postButton.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
         
     }
     
@@ -74,7 +84,9 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Beiträge"
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 12)!
         label.textColor = .lightGray
+        label.textAlignment = .center
         return label
     }()
     
@@ -100,6 +112,7 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("11", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 12)!
         return button
     }()
     
