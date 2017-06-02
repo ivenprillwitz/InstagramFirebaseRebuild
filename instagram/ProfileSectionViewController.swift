@@ -14,7 +14,7 @@ class ProfileSectionViewController: ListSectionController {
     var user: User!
     
     override func numberOfItems() -> Int {
-        return 1
+        return 3
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
@@ -22,6 +22,10 @@ class ProfileSectionViewController: ListSectionController {
         switch index {
             case 0:
                 return CGSize(width: collectionContext!.containerSize.width, height: 100)
+            case 1:
+                return CGSize(width: collectionContext!.containerSize.width, height: 60)
+            case 2:
+                return CGSize(width: collectionContext!.containerSize.width, height: collectionContext!.containerSize.height - 220)
             default:
                 return CGSize(width: collectionContext!.containerSize.width, height: 500)
         }
@@ -33,6 +37,18 @@ class ProfileSectionViewController: ListSectionController {
     switch index {
         case 0:
             guard let cell = collectionContext?.dequeueReusableCell(of: ProfileHeaderCollectionViewCell.self, for: self, at: index) as? ProfileHeaderCollectionViewCell else {
+                fatalError()
+            }
+            cell.user = user
+            return cell
+        case 1:
+            guard let cell = collectionContext?.dequeueReusableCell(of: ProfileDescriptionCollectionViewCell.self, for: self, at: index) as? ProfileDescriptionCollectionViewCell else {
+            fatalError()
+            }
+            cell.user = user
+            return cell
+        case 2:
+            guard let cell = collectionContext?.dequeueReusableCell(of: ProfileImagesCollectionViewCell.self, for: self, at: index) as? ProfileImagesCollectionViewCell else {
                 fatalError()
             }
             cell.user = user

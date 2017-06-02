@@ -12,7 +12,7 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
     
     var user: User? {
         didSet{
-        
+            //Todo
             }
         }
     override init(frame: CGRect){
@@ -27,25 +27,76 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
     fileprivate func setupView(){
         setupImageView()
         setupProfileEditButton()
-        setupPostButton()
+        setupStackview()
     }
     
-    fileprivate func setupPostButton(){
+    fileprivate func setupStackview(){
+    
+        let stackview = UIStackView(arrangedSubviews: [postContainerView, subscriberContainerView, subscribedContainerView])
+        stackview.axis = .horizontal
+        stackview.distribution = .fillEqually
+        stackview.alignment = .fill
+        stackview.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(stackview)
         
-        self.addSubview(postButton)
-        self.addSubview(postLabel)
+        stackview.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        stackview.leftAnchor.constraint(equalTo: profileEditButton.leftAnchor).isActive = true
+        stackview.rightAnchor.constraint(equalTo: profileEditButton.rightAnchor).isActive = true
+        stackview.bottomAnchor.constraint(equalTo: profileEditButton.topAnchor).isActive = true
         
-        postLabel.bottomAnchor.constraint(equalTo: profileEditButton.topAnchor, constant: -2).isActive = true
-        postLabel.leftAnchor.constraint(equalTo: profileEditButton.leftAnchor, constant: 16).isActive = true
-        postLabel.widthAnchor.constraint(equalTo: postLabel.widthAnchor).isActive = true
-        postLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        setupPostButtonAndLabel()
+        setupSubscriberButtonAndLabel()
+        setupSubscribedButtonAndLabel()
+    }
+    
+    fileprivate func setupSubscribedButtonAndLabel(){
         
-        postButton.bottomAnchor.constraint(equalTo: postLabel.topAnchor, constant: 0).isActive = true
-        postButton.leftAnchor.constraint(equalTo: postLabel.leftAnchor, constant: 0).isActive = true
+        subscribedContainerView.addSubview(subscribedButton)
+        subscribedContainerView.addSubview(subscribedLabel)
+        
+        subscribedButton.centerYAnchor.constraint(equalTo: subscribedContainerView.centerYAnchor, constant: -6).isActive = true
+        subscribedButton.centerXAnchor.constraint(equalTo: subscribedContainerView.centerXAnchor, constant: 0).isActive = true
+        subscribedButton.widthAnchor.constraint(equalTo: subscribedButton.widthAnchor).isActive = true
+        subscribedButton.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
+        subscribedLabel.topAnchor.constraint(equalTo: subscribedButton.bottomAnchor, constant: 0).isActive = true
+        subscribedLabel.centerXAnchor.constraint(equalTo: subscribedContainerView.centerXAnchor, constant: 0).isActive = true
+        subscribedLabel.widthAnchor.constraint(equalTo: subscribedLabel.widthAnchor).isActive = true
+        subscribedLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+    }
+    
+    
+    fileprivate func setupSubscriberButtonAndLabel(){
+        
+        subscriberContainerView.addSubview(subscriberButton)
+        subscriberContainerView.addSubview(subscriberLabel)
+        
+        subscriberButton.centerYAnchor.constraint(equalTo: subscriberContainerView.centerYAnchor, constant: -6).isActive = true
+        subscriberButton.centerXAnchor.constraint(equalTo: subscriberContainerView.centerXAnchor, constant: 0).isActive = true
+        subscriberButton.widthAnchor.constraint(equalTo: subscriberButton.widthAnchor).isActive = true
+        subscriberButton.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
+        subscriberLabel.topAnchor.constraint(equalTo: subscriberButton.bottomAnchor, constant: 0).isActive = true
+        subscriberLabel.centerXAnchor.constraint(equalTo: subscriberContainerView.centerXAnchor, constant: 0).isActive = true
+        subscriberLabel.widthAnchor.constraint(equalTo: subscriberLabel.widthAnchor).isActive = true
+        subscriberLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
+    }
+    
+    fileprivate func setupPostButtonAndLabel(){
+        
+        postContainerView.addSubview(postButton)
+        postContainerView.addSubview(postLabel)
+        
+        
+        postButton.centerYAnchor.constraint(equalTo: postContainerView.centerYAnchor, constant: -6).isActive = true
+        postButton.centerXAnchor.constraint(equalTo: postContainerView.centerXAnchor, constant: 0).isActive = true
         postButton.widthAnchor.constraint(equalTo: postButton.widthAnchor).isActive = true
         postButton.heightAnchor.constraint(equalToConstant: 10).isActive = true
         
-        
+        postLabel.topAnchor.constraint(equalTo: postButton.bottomAnchor, constant: 0).isActive = true
+        postLabel.centerXAnchor.constraint(equalTo: postContainerView.centerXAnchor, constant: 0).isActive = true
+        postLabel.widthAnchor.constraint(equalTo: postLabel.widthAnchor).isActive = true
+        postLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
     }
     
     fileprivate func setupProfileEditButton(){
@@ -68,6 +119,25 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
         profileImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
     
+    let postContainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let subscriberContainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let subscribedContainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
     let profileEditButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -84,7 +154,7 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Beiträge"
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 12)!
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 12)
         label.textColor = .lightGray
         label.textAlignment = .center
         return label
@@ -93,7 +163,8 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
     let subscriberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Beiträge"
+        label.text = "Abonnenten"
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 12)
         label.textColor = .lightGray
         return label
     }()
@@ -101,7 +172,8 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
     let subscribedLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Beiträge"
+        label.text = "abonniert"
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 12)
         label.textColor = .lightGray
         return label
     }()
@@ -120,6 +192,7 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("123", for: .normal)
+        button.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 12)!
         button.setTitleColor(.black, for: .normal)
         return button
     }()
@@ -128,6 +201,7 @@ class ProfileHeaderCollectionViewCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("180", for: .normal)
+        button.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 12)!
         button.setTitleColor(.black, for: .normal)
         return button
     }()

@@ -27,6 +27,9 @@
 		3CAF2F541E0AF06A00F05597 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF2F531E0AF06A00F05597 /* ProfileViewController.swift */; };
 		3CD2A8DF1EDDD3AC00AD9334 /* ProfileSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2A8DE1EDDD3AC00AD9334 /* ProfileSectionViewController.swift */; };
 		3CD2A8E11EDDD50C00AD9334 /* ProfileHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2A8E01EDDD50C00AD9334 /* ProfileHeaderCollectionViewCell.swift */; };
+		3CD2A8E41EE16E3E00AD9334 /* ProfileDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2A8E31EE16E3E00AD9334 /* ProfileDescriptionCollectionViewCell.swift */; };
+		3CD2A8E61EE1912E00AD9334 /* ProfileImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2A8E51EE1912E00AD9334 /* ProfileImagesCollectionViewCell.swift */; };
+		3CD2A8E81EE1A1FF00AD9334 /* ProfileImageOnlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2A8E71EE1A1FF00AD9334 /* ProfileImageOnlyCollectionViewCell.swift */; };
 		3CE871331E0B0B3D006FC7C7 /* instagram_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CE871321E0B0B3D006FC7C7 /* instagram_logo@3x.png */; };
 		3CE871351E0B0B56006FC7C7 /* instagram_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CE871341E0B0B56006FC7C7 /* instagram_logo.png */; };
 		3CE871371E0B0B5D006FC7C7 /* instagram_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CE871361E0B0B5D006FC7C7 /* instagram_logo@2x.png */; };
@@ -57,6 +60,9 @@
 		3CAF2F531E0AF06A00F05597 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3CD2A8DE1EDDD3AC00AD9334 /* ProfileSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSectionViewController.swift; sourceTree = "<group>"; };
 		3CD2A8E01EDDD50C00AD9334 /* ProfileHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CD2A8E31EE16E3E00AD9334 /* ProfileDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CD2A8E51EE1912E00AD9334 /* ProfileImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CD2A8E71EE1A1FF00AD9334 /* ProfileImageOnlyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageOnlyCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CE871321E0B0B3D006FC7C7 /* instagram_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram_logo@3x.png"; sourceTree = "<group>"; };
 		3CE871341E0B0B56006FC7C7 /* instagram_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram_logo.png; sourceTree = "<group>"; };
 		3CE871361E0B0B5D006FC7C7 /* instagram_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram_logo@2x.png"; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 				3C5ECCDD1ED1AB220035F5EA /* CommentCollectionViewCell.swift */,
 				3C5ECCDF1ED1AB300035F5EA /* TimestampCollectionViewCell.swift */,
 				3CD2A8E01EDDD50C00AD9334 /* ProfileHeaderCollectionViewCell.swift */,
+				3CD2A8E31EE16E3E00AD9334 /* ProfileDescriptionCollectionViewCell.swift */,
+				3CD2A8E51EE1912E00AD9334 /* ProfileImagesCollectionViewCell.swift */,
+				3CD2A8E71EE1A1FF00AD9334 /* ProfileImageOnlyCollectionViewCell.swift */,
 			);
 			name = "Custom Controlls";
 			sourceTree = "<group>";
@@ -355,13 +364,16 @@
 				3CAF2F521E0AF05A00F05597 /* ActivityViewController.swift in Sources */,
 				3C7F092B1ED0668E0030F3DE /* FeedCollectionViewCell.swift in Sources */,
 				3CF626A31E0AEA1B0014F6CC /* AppDelegate.swift in Sources */,
+				3CD2A8E41EE16E3E00AD9334 /* ProfileDescriptionCollectionViewCell.swift in Sources */,
 				3CAF2F4E1E0AF02B00F05597 /* SearchViewController.swift in Sources */,
 				3C5ECCE01ED1AB300035F5EA /* TimestampCollectionViewCell.swift in Sources */,
 				3C7F09261ED05EE30030F3DE /* User.swift in Sources */,
+				3CD2A8E61EE1912E00AD9334 /* ProfileImagesCollectionViewCell.swift in Sources */,
 				3CD2A8DF1EDDD3AC00AD9334 /* ProfileSectionViewController.swift in Sources */,
 				3CAF2F541E0AF06A00F05597 /* ProfileViewController.swift in Sources */,
 				3CD2A8E11EDDD50C00AD9334 /* ProfileHeaderCollectionViewCell.swift in Sources */,
 				3C5ECCDE1ED1AB220035F5EA /* CommentCollectionViewCell.swift in Sources */,
+				3CD2A8E81EE1A1FF00AD9334 /* ProfileImageOnlyCollectionViewCell.swift in Sources */,
 				3C5ECCDC1ED1A2290035F5EA /* DescriptionCollectionViewCell.swift in Sources */,
 				3C7F09281ED05EEF0030F3DE /* Post.swift in Sources */,
 				3C5ECCDA1ED19C430035F5EA /* LikeCollectionViewCell.swift in Sources */,
